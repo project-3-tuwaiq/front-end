@@ -1,6 +1,7 @@
 import Layout from "../../component/MyLayout";
 import {Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css' 
+import login from "../../styles/Login.module.css"
 
 
 
@@ -8,10 +9,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 export default function index() {
     return (
             <Layout>
-            <Form>
+            <Form className={login.myForm}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Label>ID</Form.Label>
+    <Form.Control type="email" placeholder="Enter ID" />
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
@@ -22,11 +23,10 @@ export default function index() {
     <Form.Control type="password" placeholder="Password" />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
-  <Button variant="primary" type="submit">
+  <button className={login.button}>
     Submit
-  </Button>
+  </button>
 </Form>
 </Layout>
     )

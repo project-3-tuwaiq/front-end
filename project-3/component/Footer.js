@@ -1,10 +1,10 @@
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Navbar, Container} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Footer() {
   return (
     <div>
-      <Row className="footer">
+      {/* <Row className="footer">
         <Col xs={6} md={4}>
           <img
             className="footerimg"
@@ -22,7 +22,19 @@ export default function Footer() {
 <Col></Col>
 
 
-      </Row>
+      </Row> */}
+
+<Navbar>
+  <Container>
+    <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+    <Navbar.Toggle />
+    <Navbar.Collapse className="justify-content-end">
+      <Navbar.Text>
+        Signed in as: <a href="#login">Mark Otto</a>
+      </Navbar.Text>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
     </div>
   );
 }
