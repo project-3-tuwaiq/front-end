@@ -5,7 +5,7 @@ import myHeader from "../styles/Header.module.css"
 
 export default function Header() {
   return (
-    <div className={myHeader.header}>
+    <div className={myHeader.header}> 
         <Nav justify variant="tabs" defaultActiveKey="/home" >
         <Nav.Item >
     <Nav.Link className={myHeader.header} href="/about">About  </Nav.Link>

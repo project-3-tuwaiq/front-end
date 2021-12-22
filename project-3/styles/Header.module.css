@@ -1,6 +1,7 @@
 .header{
     border-right-color: black;
-    color: black;
+    color: #0d6efd;
+    height: 50px;
 }
 
 @-webkit-keyframes hvrPush {
@@ -22,7 +23,7 @@
       -webkit-transform: scale(1);
       transform: scale(1);
     }
-  }
+  }  
   .hvrPush {
     display: inline-block;
     vertical-align: middle;
