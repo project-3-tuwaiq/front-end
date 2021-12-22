@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout>
       <div className={styles.backgroundImage}>
-        <CardGroup>
+        <CardGroup className={styles.CardGroup}>
           <Card className={styles.rowOfCard}>
             {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
             <Card.Body>

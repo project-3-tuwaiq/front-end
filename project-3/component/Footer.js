@@ -6,14 +6,14 @@ import logo from '../public/images/PNG/Drawkit-Vector-Illustration-Medical-18.pn
 export default function Footer() {
   return (
     <div className={styles.footer}>
-<Navbar>
+<Navbar className={styles.Navbar}>
   <Container>
     <Navbar.Brand href="#home"></Navbar.Brand>
-    <Image src={logo} width="100px"height="100px"/>
+    <Image src={logo} width="100px"height="70px"/>
     <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end">
       <Navbar.Text>
-         <a  href="#login">Copy Right 2021</a>
+         <p className={styles.p}>Copy Right 2021</p>
       </Navbar.Text>
     </Navbar.Collapse>
   </Container>
