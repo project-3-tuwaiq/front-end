@@ -6,4 +6,15 @@
     align-content:stretch; */
     
 }
-
+.Navbar{
+    border-top: 1px solid #0d6efd  ;
+    background-color: white;
+    position:absolute;
+    width: 100%;
+   
+      /* Height of the footer */
+   
+}
+.p{
+    color: #0d6efd;
+}
