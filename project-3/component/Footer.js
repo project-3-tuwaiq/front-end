@@ -1,36 +1,19 @@
 import { Row, Col, Navbar, Container} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-
+import styles from "../styles/Footer.module.css"
+import Image  from "next/image";
+import logo from '../public/images/PNG/Drawkit-Vector-Illustration-Medical-18.png'
 export default function Footer() {
   return (
-    <div>
-      {/* <Row className="footer">
-        <Col xs={6} md={4}>
-          <img
-            className="footerimg"
-            src="https://cdn2.iconfinder.com/data/icons/medical-services-set-3-1/64/x-01-512.png"
-            width="150px"
-            
-          />
-         
-        </Col>
-        <Col> </Col>
-       
-      </Row>
-      <Row>
-<Col><img src=""/></Col>
-<Col></Col>
-
-
-      </Row> */}
-
+    <div className={styles.footer}>
 <Navbar>
   <Container>
-    <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+    <Navbar.Brand href="#home"></Navbar.Brand>
+    <Image src={logo} width="100px"height="100px"/>
     <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end">
       <Navbar.Text>
-        Signed in as: <a href="#login">Mark Otto</a>
+         <a  href="#login">Copy Right 2021</a>
       </Navbar.Text>
     </Navbar.Collapse>
   </Container>

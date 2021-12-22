@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Lalezar&family=PT+Serif:ital,wght@1,700&display=swap');
+
 .background_image {
   position: absolute;
   top: 0;
@@ -7,9 +9,7 @@
   height: 100vh;
   z-index: 1;
 }
-/* .background_image{
-  background-image: url("Drawkit-Vector-Illustration-Medical-19.png");
-} */
+
 .backgroundImage{
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.73)),url("../public/images/PNG/Drawkit-Vector-Illustration-Medical-19.png") ;
   background-size: 100%;
@@ -23,9 +23,21 @@
 
 }
 .rowOfCard{
-  margin-top: 15%;
-  opacity: 0.7;
+  margin-top: 10% ;
+  opacity: 0.8;
   display: flex;
   justify-content: space-between;
-
+ padding: 70px;
+ border: #0d6efd solid;
+ border-bottom-left-radius: 50px;
+ border-top-right-radius: 50px;
+ border-top-left-radius: 50px;
+ border-bottom-right-radius:50px ;
+ font-family: Serif;
+ 
+ 
+}
+.title{
+  color:#0d6efd;
+  font-size: xx-large;
 }

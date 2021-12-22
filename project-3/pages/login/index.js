@@ -1,33 +1,36 @@
 import Layout from "../../component/MyLayout";
-import {Form, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css' 
-import login from "../../styles/Login.module.css"
+import { Form, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
+import Image from "next/image";
 
-
-
+import login from "../../styles/Login.module.css";
 
 export default function index() {
-    return (
-            <Layout>
-            <Form className={login.myForm}>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>ID</Form.Label>
-    <Form.Control type="email" placeholder="Enter ID" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
+  return (
+    <div className={login.allbody}>
+      <Layout>
+        <Form className={login.myForm}>
+          <img
+            className={login.img}
+            src="https://www.darenc.com/home/showpublishedimage/11072/637514131778170000"
+          />
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <br />
+            <Form.Label>ID</Form.Label>
+            <Form.Control type="email" placeholder="Enter ID" />
+          </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-  </Form.Group>
-  <button className={login.button}>
-    Submit
-  </button>
-</Form>
-</Layout>
-    )
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+          <Form.Group
+            className="mb-3"
+            controlId="formBasicCheckbox"
+          ></Form.Group>
+          <button className={login.button}>Log In</button>
+        </Form>
+      </Layout>
+    </div>
+  );
 }
