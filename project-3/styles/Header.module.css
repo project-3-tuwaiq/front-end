@@ -5,11 +5,17 @@
     border-bottom: 1px solid #0d6efd  ;
     background-color: white;
     width: 100%;
+    
 }
 .logo{
   height: 20px;
 }
-
+.login{
+  margin-top: 0%;
+}
+.home{
+  margin-top: 1%;
+}
 @-webkit-keyframes hvrPush {
     50% {
       -webkit-transform: scale(0.8);
@@ -36,6 +42,8 @@
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(59, 57, 57, 0);
+    margin-top: 2%;
+
   }
   .hvrPush:hover, .hvrPush:focus, .hvrPush:active {
     -webkit-animation-name: hvrPush;

@@ -25,11 +25,8 @@ export default function index() {
 
     heart rate:
     <Form.Control  type="text" placeholder="heart rate of patient"  />
+    <button className={Nurce.button}> Send </button>
     </Col>
-
-
-
-  
 </Form>
             </Layout>
     )
