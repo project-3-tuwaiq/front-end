@@ -19,8 +19,7 @@ export default function index() {
       lastName:lastName,
       age:age,
       jobDescription:jobDescription,//not sure
-      
-      passWord:passWord
+       passWord:passWord
     }
     axios({
       method:"post",
