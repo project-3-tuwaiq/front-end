@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import img from "../public/images/PNG/Drawkit-Vector-Illustration-Medical-01.png";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import axios from 'axios'
+import {useState} from 'react'
 
 export default function Home() {
   return (
