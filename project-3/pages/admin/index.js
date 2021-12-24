@@ -1,40 +1,58 @@
 import Layout from "../../component/MyLayout";
-import { Form, Row, Col, Badge,Button } from "react-bootstrap";
+import { Form, Row, Col, Badge, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import admin from "../../styles/Admin.module.css";
 import Image from "next/image";
-import { useState } from "react";
-import axios from 'axios'
+import { useState, useEffect } from "react";
+import axios from "axios";
 export default function index() {
-  const[nationalId,setNationalId]=useState("")
-  const [firstName , setFirstName ]=useState("")
-  const [lastName,setLastName]=useState("")
-  const [age ,setAge]=useState("")
-  const [jobDescription ,setJobDescription]= useState("")
-  const [ passWord ,setPassWord]=useState("")
-  function saveUser(){
-    let data={
-      nationalId:nationalId,
-      firstName:firstName,
-      lastName:lastName,
-      age:age,
-      jobDescription:jobDescription,//not sure
-       passWord:passWord
-    }
+  const [nationalId, setNationalId] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [age, setAge] = useState("");
+  const [role, setRole] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [roles, setRoles] = useState([]);
+
+  function saveUser() {
+    let data = {
+      nationalId: nationalId,
+      firstName: firstName,
+      lastName: lastName,
+      age: age,
+      role: role, //not sure
+
+      password: password,
+    };
     axios({
-      method:"post",
-      url:"http://localhost:5000/user/save",
-      data: JSON.stringify(data)
+      method: "post",
+      url: "http://localhost:5000/user/save",
+      data: data,
     })
-    .then((response)=>{
-      console.log(response);
-      setMessage("block")
-    })
-    .catch((error)=>{
-      console.log(error);
-      setDisplay("block")
-    })
+      .then((response) => {
+        console.log(response);
+        // setMessage("block")
+        window.location.href = "/admin";
+      })
+
+      .catch((error) => {
+        console.log(error);
+        // setDisplay("block")
+      });
   }
+  useEffect(async () => {
+    axios
+      .get("http://localhost:5000/roles")
+      .then((res) => {
+        setRoles(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  console.log(role);
   return (
     <Layout>
       <Form className={admin.adminForm}>
@@ -47,80 +65,71 @@ export default function index() {
         </Badge>{" "}
         <Col>
           National ID:
-          <Form.Control type="text" placeholder="Enter First Name" 
-          onChange={(e)=>setNationalId(e.target.value)}
+          <Form.Control
+            type="text"
+            placeholder="Enter First Name"
+            onChange={(e) => setNationalId(e.target.value)}
           />
           <br />
           First Name:
-          <Form.Control type="text" placeholder="Enter First Name" 
-          onChange={(e)=>setFirstName(e.target.value)}
+          <Form.Control
+            type="text"
+            placeholder="Enter First Name"
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <br />
           Last Name:
-          <Form.Control type="text" placeholder="Enter Last Name"
-          onChange={(e)=>setLastName(e.target.value)}
+          <Form.Control
+            type="text"
+            placeholder="Enter Last Name"
+            onChange={(e) => setLastName(e.target.value)}
           />
           <br />
           age:
-          <Form.Control type="text" placeholder="Enter Age"
-          onChange={(e)=>setAge(e.target.value)}
+          <Form.Control
+            type="text"
+            placeholder="Enter Age"
+            onChange={(e) => setAge(e.target.value)}
           />
           <br />
           Job Description:
-          {["radio"].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
+          {roles.map((roleValue) => (
+            <div key={roleValue._id} className="mb-3">
               <Form.Check
                 inline
-                label="Doctor"
-                name="group1"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={(e)=>setJobDescription(e.target.value)}
-               />
-              <Form.Check
-                inline
-                label="Nurse"
-                name="group1"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={(e)=>setJobDescription(e.target.value)}
+                label={roleValue.title}
+                name="role"
+                type="radio"
+                id={roleValue._id}
+                value={roleValue._id}
+                onChange={(e) => setRole(e.target.value)}
               />
-              <Form.Check
-                inline
-                label="Receptionist"
-                name="group1"
-                type={type}
-                id={`inline-${type}-1`}
-                onChange={(e)=>setJobDescription(e.target.value)}
-              />
-              <Form.Check
-                inline
-                label="Other"
-                name="group1"
-                type={type}
-                id={`inline-${type}-2`}
-                onChange={(e)=>setJobDescription(e.target.value)}
-              />
-              <br/>
-              
-              Description:
-              <Form.Control type="text" placeholder="Enter Description" />
+
+              <br />
             </div>
           ))}
           <br />
-          PassWord:
-          <Form.Control type="text" placeholder="Enter Password" 
-          onChange={(e)=>setPassWord(e.target.value)}
+          Password:
+          <Form.Control
+            type="text"
+            placeholder="Enter Password"
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <Button className={admin.button}
-           onClick={()=>{
-            saveUser()
-            window.location.href="/admin"
-          }}
-          
-          > Save </Button>
+          <Button
+            className={admin.button}
+            onClick={() => {
+              saveUser();
+            }}
+          >
+            {" "}
+            Save{" "}
+          </Button>
         </Col>
       </Form>
     </Layout>
   );
 }
+
+
+
+    
