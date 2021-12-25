@@ -5,6 +5,7 @@ import admin from "../../styles/Admin.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import swal from 'sweetalert';
 export default function index() {
   const [nationalId, setNationalId] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -32,7 +33,7 @@ export default function index() {
     })
       .then((response) => {
         console.log(response);
-        // setMessage("block")
+        swal("employee  created")
         window.location.href = "/admin";
       })
 
