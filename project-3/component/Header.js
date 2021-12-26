@@ -1,6 +1,6 @@
 import {Nav, } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css' 
-import { NavLink } from 'react-bootstrap';
+import { NavLink, InputGroup, Dropdown, FormControl, DropdownButton } from 'react-bootstrap';
 import myHeader from "../styles/Header.module.css"
 import wateen from "../public/images/wateen.jpg"
 import Image from 'next/image';
@@ -27,7 +27,7 @@ export default function Header() {
   <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
 </svg> Login </Nav.Link>
   </Nav.Item>
- 
+
 </Nav>
 
     </div>
